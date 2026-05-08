@@ -1,0 +1,323 @@
+/* Quiz Page Styles */
+.quiz-page {
+  min-height: 100vh;
+  padding: 120px 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.quiz-container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Quiz Header */
+.quiz-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.quiz-header h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+}
+
+.quiz-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+/* Quiz Progress */
+.quiz-progress {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e91e63, #7b1fa2);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Quiz Card */
+.quiz-card {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.question-number {
+  display: inline-block;
+  background: linear-gradient(135deg, #e91e63, #7b1fa2);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.question-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Options Grid */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+}
+
+.option-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.option-btn.correct {
+  background: rgba(76, 175, 80, 0.4);
+  border-color: #4caf50;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+}
+
+.option-btn.wrong {
+  background: rgba(244, 67, 54, 0.4);
+  border-color: #f44336;
+}
+
+.option-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Explanation */
+.explanation {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.explanation-correct,
+.explanation-wrong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.explanation-correct {
+  color: #4caf50;
+}
+
+.explanation-wrong {
+  color: #f44336;
+}
+
+.explanation-icon {
+  font-size: 1.5rem;
+}
+
+.explanation-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Quiz Result */
+.quiz-result {
+  text-align: center;
+  padding: 50px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.result-emoji {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.quiz-result h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.result-score {
+  margin-bottom: 20px;
+}
+
+.score-number {
+  font-family: "Dancing Script", cursive;
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
+}
+
+.score-total {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.result-message {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Result Rewards */
+.result-rewards {
+  margin-bottom: 30px;
+}
+
+.reward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 10px auto;
+  max-width: 350px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.reward.special {
+  background: linear-gradient(
+    135deg,
+    rgba(233, 30, 99, 0.3),
+    rgba(123, 31, 162, 0.3)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: shimmer 2s linear infinite;
+  background-size: 200% auto;
+}
+
+.reward-icon {
+  font-size: 1.5rem;
+}
+
+.restart-btn {
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quiz-page {
+    padding: 100px 15px 40px;
+  }
+
+  .quiz-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .quiz-card {
+    padding: 25px;
+  }
+
+  .question-text {
+    font-size: 1.2rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .option-btn {
+    padding: 15px 18px;
+  }
+
+  .quiz-result {
+    padding: 35px 25px;
+  }
+
+  .score-number {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-header h1 {
+    font-size: 2rem;
+  }
+
+  .quiz-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
