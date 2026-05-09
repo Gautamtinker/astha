@@ -228,6 +228,47 @@ h6 {
   h2 {
     font-size: 2rem;
   }
+
+  /* Fix all page containers for mobile */
+  .gallery-page,
+  .timeline-page,
+  .quiz-page,
+  .notebook-page,
+  .messages-page,
+  .surprise-page,
+  .landing-page {
+    padding: 90px 15px 40px !important;
+    min-height: auto !important;
+  }
+
+  .glass-card {
+    padding: 20px !important;
+    border-radius: 15px !important;
+  }
+
+  .btn-romantic {
+    padding: 12px 25px !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-page,
+  .timeline-page,
+  .quiz-page,
+  .notebook-page,
+  .messages-page,
+  .surprise-page {
+    padding: 80px 10px 30px !important;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
 }
 
 /* Loading Animation */

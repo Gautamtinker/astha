@@ -5,10 +5,12 @@ function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
-  // Using a royalty-free romantic background music
-  // You can replace this URL with your own audio file
+  // Romantic background music options
+  // Option 1: Soft romantic piano (default)
+  // Option 2: Beautiful love song instrumental
+  // To use your own song: Place your audio file in public/ folder and use "/your-song.mp3"
   const audioUrl =
-    "https://cdn.pixabay.com/download/audio/2022/08/04/audio_2dde668d05.mp3";
+    "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf47a.mp3";
 
   useEffect(() => {
     const audio = audioRef.current;
