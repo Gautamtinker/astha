@@ -6,6 +6,8 @@ import Quiz from "./components/Quiz";
 import LoveNotebook from "./components/LoveNotebook";
 import Messages from "./components/Messages";
 import Surprise from "./components/Surprise";
+import LoveCalculator from "./components/LoveCalculator";
+import VoiceMessages from "./components/VoiceMessages";
 import Navigation from "./components/Navigation";
 import "./App.css";
 
@@ -21,6 +23,8 @@ function App() {
         <Route path="/notebook" element={<LoveNotebook />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/surprise" element={<Surprise />} />
+        <Route path="/love-calculator" element={<LoveCalculator />} />
+        <Route path="/voice-messages" element={<VoiceMessages />} />
       </Routes>
     </div>
   );

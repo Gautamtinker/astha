@@ -11,6 +11,8 @@ const navItems = [
   { path: "/notebook", label: "Notebook", icon: "📝" },
   { path: "/messages", label: "Messages", icon: "💌" },
   { path: "/surprise", label: "Surprise", icon: "🎁" },
+  { path: "/love-calculator", label: "Love Calc", icon: "💝" },
+  { path: "/voice-messages", label: "Voice Msg", icon: "🎤" },
 ];
 
 function Navigation() {
