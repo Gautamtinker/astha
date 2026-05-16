@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./LoveNotebook.css";
 
 // API Base URL - Change this to your deployed backend URL
+// The URL should point to your backend root
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://astha-backend-alpha.vercel.app/";
+  import.meta.env.VITE_API_URL || "https://astha-backend-alpha.vercel.app";
 
 function LoveNotebook() {
   const [notes, setNotes] = useState([]);
@@ -23,10 +24,17 @@ function LoveNotebook() {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/notes`);
-      const data = await response.json();
+      console.log("Fetching notes from:", `${API_BASE_URL}/api/notes`);
+      const response = await fetch(`${API_BASE_URL}/api/notes`);
 
-      if (data.success) {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Received data:", data);
+
+      if (data.success && data.data) {
         // Transform API data to match our component format
         const transformedNotes = data.data.map((note) => ({
           ...note,
@@ -40,11 +48,13 @@ function LoveNotebook() {
           mood: getMoodFromCategory(note.category),
         }));
         setNotes(transformedNotes);
+      } else {
+        throw new Error(data.error || "Invalid response from server");
       }
     } catch (err) {
       console.error("Error fetching notes:", err);
       setError(
-        "Could not load notes. Make sure the backend server is running.",
+        `Could not load notes: ${err.message}. Check console for details.`,
       );
     } finally {
       setLoading(false);
@@ -80,7 +90,7 @@ function LoveNotebook() {
     const selectedMood = moods[Math.floor(Math.random() * moods.length)];
 
     try {
-      const response = await fetch(`${API_BASE_URL}/notes`, {
+      const response = await fetch(`${API_BASE_URL}/api/notes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -127,18 +137,21 @@ function LoveNotebook() {
     if (!newNote.title.trim() || !newNote.content.trim()) return;
 
     try {
-      const response = await fetch(`${API_BASE_URL}/notes/${editingNote._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${API_BASE_URL}/api/notes?id=${editingNote._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            title: newNote.title,
+            content: newNote.content,
+            category: getCategoryFromMood(editingNote.mood),
+            color: editingNote.color,
+          }),
         },
-        body: JSON.stringify({
-          title: newNote.title,
-          content: newNote.content,
-          category: getCategoryFromMood(editingNote.mood),
-          color: editingNote.color,
-        }),
-      });
+      );
 
       const data = await response.json();
 
@@ -178,7 +191,7 @@ function LoveNotebook() {
     );
     if (confirmDelete) {
       try {
-        await fetch(`${API_BASE_URL}/notes/${mongodbId}`, {
+        await fetch(`${API_BASE_URL}/api/notes?id=${mongodbId}`, {
           method: "DELETE",
         });
         setNotes(notes.filter((note) => note._id !== mongodbId));
