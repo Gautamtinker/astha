@@ -23,7 +23,7 @@ function LoveNotebook() {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/notes`);
+      const response = await fetch(`${API_BASE_URL}notes`);
       const data = await response.json();
 
       if (data.success) {
@@ -80,7 +80,7 @@ function LoveNotebook() {
     const selectedMood = moods[Math.floor(Math.random() * moods.length)];
 
     try {
-      const response = await fetch(`${API_BASE_URL}/notes`, {
+      const response = await fetch(`${API_BASE_URL}notes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -127,7 +127,7 @@ function LoveNotebook() {
     if (!newNote.title.trim() || !newNote.content.trim()) return;
 
     try {
-      const response = await fetch(`${API_BASE_URL}/notes/${editingNote._id}`, {
+      const response = await fetch(`${API_BASE_URL}notes/${editingNote._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -178,7 +178,7 @@ function LoveNotebook() {
     );
     if (confirmDelete) {
       try {
-        await fetch(`${API_BASE_URL}/notes/${mongodbId}`, {
+        await fetch(`${API_BASE_URL}notes/${mongodbId}`, {
           method: "DELETE",
         });
         setNotes(notes.filter((note) => note._id !== mongodbId));
