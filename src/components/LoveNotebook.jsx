@@ -23,10 +23,6 @@ function LoveNotebook() {
   useEffect(() => {
     fetchNotes();
 
-    const interval = setInterval(() => {
-      fetchNotes();
-    }, 3000);
-
     return () => clearInterval(interval);
   }, []);
 
