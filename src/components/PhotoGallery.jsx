@@ -10,7 +10,7 @@ import astha7 from "../Photos/astha7.jpeg";
 import astha9 from "../Photos/astha9.jpeg";
 import astha10 from "../Photos/astha10.jpeg";
 import astha11 from "../Photos/astha11.jpeg";
-import astha12 from "../Photos/astha11.jpeg";
+import astha12 from "../Photos/astha12.jpeg";
 // Sample photos - Replace these with your actual photos
 const samplePhotos = [
   {
