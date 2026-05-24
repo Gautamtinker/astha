@@ -11,6 +11,7 @@ import astha9 from "../Photos/astha9.jpeg";
 import astha10 from "../Photos/astha10.jpeg";
 import astha11 from "../Photos/astha11.jpeg";
 import astha12 from "../Photos/astha12.jpeg";
+import astha13 from "../Photos/astha13.jpeg";
 // Sample photos - Replace these with your actual photos
 const samplePhotos = [
   {
@@ -72,6 +73,12 @@ const samplePhotos = [
     url: astha12,
     caption: "My First Gift to Her 💕",
     date: "Mar 28, 2026",
+  },
+  {
+    id: 11,
+    url: astha13,
+    caption: "EK ahsas tere hone ka 💕",
+    date: "May 24, 2026",
   },
 ];
 
