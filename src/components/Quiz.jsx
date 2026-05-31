@@ -40,15 +40,16 @@ const quizQuestions = [
   },
   {
     id: 4,
-    question: "What song reminds me of you?",
+    question: "When did we meet for the second time? ❤️",
     options: [
-      "Perfect - Ed Sheeran",
-      "All of Me - John Legend",
-      "Thinking Out Loud",
-      "Can't Help Falling in Love",
+      "15th March 2026",
+      "28th March 2026",
+      "5th April 2026",
+      "12th April 2026",
     ],
     correctAnswer: 1,
-    explanation: "All of Me by John Legend - because I love all of you! 🎵",
+    explanation:
+      "28th March 2026 - Our beautiful second meeting that I'll always cherish! 🥰💕",
   },
   {
     id: 5,
