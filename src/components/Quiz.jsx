@@ -67,6 +67,13 @@ const quizQuestions = [
     explanation: "You're my Bacha - my life, my everything! 💕",
   },
   {
+    id: 6,
+    question: "What do I call you?",
+    options: ["Baby", "Mera Bacha", "Love", "Sweetheart"],
+    correctAnswer: 1,
+    explanation: "You're my Bacha - my life, my everything! 💕",
+  },
+  {
     id: 7,
     question: "What's our favorite activity together?",
     options: [
@@ -77,6 +84,44 @@ const quizQuestions = [
     ],
     correctAnswer: 3,
     explanation: "Everything is better when we're together! 🌟",
+  },
+  {
+    id: 8,
+    question: "When did our Roka happen? 💍",
+    options: [
+      "26th March 2026",
+      "28th March 2026",
+      "2nd January 2026",
+      "19th April 2026",
+    ],
+    correctAnswer: 1,
+    explanation: "28th March 2026 - The day our Roka happened! 💕💍",
+  },
+  {
+    id: 9,
+    question: "When is Astha's birthday? 🎂",
+    options: ["2nd January", "19th April", "28th March", "26th March"],
+    correctAnswer: 0,
+    explanation: "2nd January - The birthday of my favorite person! 🎉❤️",
+  },
+  {
+    id: 10,
+    question: "When is my birthday? 🎂",
+    options: ["2nd January", "26th March", "19th April", "28th March"],
+    correctAnswer: 2,
+    explanation: "19th April - My special day! 🎉🥰",
+  },
+  {
+    id: 11,
+    question: "When did we meet for the third time, hiding from everyone? 🤫❤️",
+    options: [
+      "26th March 2026",
+      "28th March 2026",
+      "19th April 2026",
+      "2nd January 2026",
+    ],
+    correctAnswer: 0,
+    explanation: "26th March 2026 - Our secret third meeting! 🤫💕",
   },
 ];
 
