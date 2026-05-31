@@ -67,13 +67,6 @@ const quizQuestions = [
     explanation: "You're my Bacha - my life, my everything! 💕",
   },
   {
-    id: 6,
-    question: "What do I call you?",
-    options: ["Baby", "Mera Bacha", "Love", "Sweetheart"],
-    correctAnswer: 1,
-    explanation: "You're my Bacha - my life, my everything! 💕",
-  },
-  {
     id: 7,
     question: "What's our favorite activity together?",
     options: [
