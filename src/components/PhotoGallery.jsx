@@ -80,6 +80,12 @@ const samplePhotos = [
     caption: "EK ahsas tere hone ka 💕",
     date: "May 24, 2026",
   },
+  {
+    id: 12,
+    url: astha14,
+    caption: "Hamari dusri mulaqat ❤️ Chupte Chupate",
+    date: "May 26, 2026",
+  },
 ];
 
 function PhotoGallery() {
